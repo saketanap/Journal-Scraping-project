@@ -1,0 +1,96 @@
+Topic: Hereditas
+Web Link: https://hereditasjournal.biomedcentral.com 
+
+Group members:
+Saketan Patil
+Rohit Bisht
+Triman Kaur
+Monik Bansal
+
+README:
+This Project is implemented in Python Programming Language.
+
+Python Libraries Required for execution:
+1. Beautiful Soap
+2. requests
+3. re
+4. urlib
+5. pandas
+
+It has 4 folders:
+1. main_Script: Contains primary python Script (Journal_Scraping.py), python script to read stored data from text file (Journal_Scaping_Read.py) and Readme file. This folder also contains ipynb file of Google Colaboratory on which project is developed (Journal_Scrape_google_colab.ipynb).
+2. html_text_files: Contains html files of articles according to year. 
+3. plain_text: Contains Article data in text files as well as CSV files by year.
+4. information_pdf: Contains pdf file of working.
+
+Primary Script to crawl data from website is Journal_Scraping.py.
+Inputs for this file: year and path of the operation directory (i.e. path to folder in which project zip will be extracted). Both the field are by variable names year and input_path respectively. 
+Upon Execution of this program html files will be saved in html_text_files folder inside corresponding year folder, as well as csv and plain text file will be saved in plain_text folder.
+
+Run the file by below command:
+python <current directory path>/Journal_Scraping_Project/main_Script/Journal_Scraping.py
+Example in my case:
+python Journal_Scraping.py
+
+Output of this file will display following 10 columns for each article:
+DOI
+Journal Link
+Title
+Authors
+Author Affiliations
+Corresponding Author
+Publication Date
+Abstract
+Keywords
+Full text (This part is truncated to 300 characters for proper visibility of other columns)
+
+Full text of each article will be saved as html file in the folder html_text_files inside corresponding year folder. (e.g. 10.1186_s41065-017-0037-1.html)
+This folder will have 109 files i.e. html for all articles on above website.
+
+Information about text file (Hereditas<year>.txt):
+Text file contains all above attributes of article will be saved in plain_text folder.
+Each attribute will be separated from other by ||%%|| and newline. Whereas Each Article will be separated from other by "\n-------------------------End of Article--------------------------------\n\n\n" where \n represents new line.
+This is done to easily read this text file back to code.
+Article Data will also be saved as CSV in plain_text folder as data.csv.
+
+Journal_Scaping_Read.py:
+This file is in main_Script folder.
+This file is used to read above text file and display information in command line output after code execution.
+Run this file by below command:
+python Journal_Scraping_Read.py
+
+Output of this file will display following 10 columns for each article:
+DOI
+Journal Link
+Title
+Authors
+Author Affiliations
+Corresponding Author
+Publication Date
+Abstract
+Keywords
+Full text (This part is truncated to 300 characters for proper visibility of other columns).
+
+Project Testing:
+This Project is tested on python version Python3.7 on Mac OS Sierra and Google Colaboratory.
+
+Ignored fields:
+Corresponding author email id was not mentioned in any of the article on this website. Therefore, this field is ignored.
+
+Observations in output:
+We Observed and verified number of articles for each volume(year) for the Hereditas journal.
+We have year and number of articles listed below:
+2015: 3
+2016: 17
+2017: 16
+2018: 38
+2019: 35
+
+As seen in the website some of the articles during search of year 2018 shown the results of 2017 too. Our Project has followed website search and listing so, above results are displayed. 
+i.e. 2018 search have articles of 2017 published date as per website.
+
+Full text of an article contains some binary data (special characters, symbols etc.), especially in references part where links are being displayed for the resource.
+
+
+
+
